@@ -36,6 +36,12 @@ function [t ,u, H, ERROR, rechazo] = mirkf45( fun, t0, tfin, x0, h0, hmin, TOL, 
     
     while ( t(n) < tfin )
         
+        %%% Esto permite controlar funciones no acotadas %%%%
+        %if ( n == 1000000000000 )
+        %    return;
+        %end
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
         for i=1:6
             tmp = zeros(m,1);
             for j=1:6
@@ -66,7 +72,7 @@ function [t ,u, H, ERROR, rechazo] = mirkf45( fun, t0, tfin, x0, h0, hmin, TOL, 
             disp(num2str(hmin));
             disp('Paso tentativo: ');
             disp(num2str(h));
-            exit(-1);
+            return;
         else 
             rechazo = rechazo + 1;
         end

@@ -24,6 +24,11 @@ function [t ,u, H, ERROR, rechazo] = mi2metadap( fun, t0, tfin, x0, h0, hmin, TO
     
     while ( t(n) < tfin )
         
+        %%% Esto permite controlar funciones no acotadas %%%%
+        %if ( n == 1000000000000 )
+        %    return;
+        %end
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         phi_aux1 = feval(phi_metodo1, fun, t(n), u(:,n), h, par);
         phi_aux2 = feval(phi_metodo2, fun, t(n), u(:,n), h, par);
         
@@ -43,7 +48,7 @@ function [t ,u, H, ERROR, rechazo] = mi2metadap( fun, t0, tfin, x0, h0, hmin, TO
             disp(num2str(hmin));
             disp('Paso tentativo: ');
             disp(num2str(h));
-            exit(-1);
+            return;
         else 
             rechazo = rechazo + 1;
         end
