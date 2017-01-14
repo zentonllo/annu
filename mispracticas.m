@@ -45,10 +45,10 @@ par = [];
 
 
 %%%% Test2mimetadap.m (Estimacion del error en dos métodos monopaso de distinto orden)  %%%%%%%
-phi_metodo1 = @phi_euler;
-orden1 = 1;
-phi_metodo2 = @phi_rk4;
-orden2 = 4;
+% phi_metodo1 = @phi_euler;
+% orden1 = 1;
+% phi_metodo2 = @phi_rk4;
+% orden2 = 4;
 %%%%%%%%%%%%%%%
 
 %%% Testmimetadap.m (Estimación del error en dos pasos sucesivos o Método de Richardson) %%%%%%%%%
@@ -75,9 +75,9 @@ orden2 = 4;
 
 %%% Práctica 24 %%%
 
- fun=@funcoscil; x0 = (1/exp(1)); tinic=0; tfin=8;
+% fun=@funcoscil; x0 = (1/exp(1)); tinic=0; tfin=8;
 % Prueba con métodos adaptativos
- h0 = 1e-5; hmin = 10e-5; TOL = 10e-5;
+% h0 = 1e-5; hmin = 10e-5; TOL = 10e-5;
 
 % Prueba con paso constante
 % N = 5000;

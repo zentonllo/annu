@@ -20,7 +20,7 @@ function [t ,u, numfun] = mitrap( fun, t0, tfin, N, x0, jac, itmax, par )
         it = 0;
         while (it ~= itmax && norm(w) >= (h^3) )
             
-            DG = eye(m) - (h/2)*feval(jac,t(n),z);
+            DG = eye(m) - (h/2)*feval(jac,t(n),z,par);
             G = z - cte - (h/2)*feval(fun, t(n),z, par);
             numfun = numfun + 1;
             w = DG\G;

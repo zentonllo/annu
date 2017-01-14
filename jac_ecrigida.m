@@ -1,3 +1,2 @@
-function res = jac_ecrigida(t,z)
-
-res = -50;
+function res = jac_ecrigida(t,z,par)
+    res = -50;
