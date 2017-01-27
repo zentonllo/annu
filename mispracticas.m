@@ -87,6 +87,7 @@ par = [];
  % Metodo de disparo
  
  %%%%%%%%%%%%%% PRÁCTICA 26 %%%%%%%%%%%%%%%%%
+ %%% Disparo lineal
  %pqr = { @(t) 0*t, @(t) 4 + 0*t, @(t) -4*t }; x0=[0;2]; tinic=0; tfin=1; 
  %pqr = { @(t) 0*t, @(t) 4 + 0*t, @(t) -4*t }; x0=[-2;1]; tinic=0; tfin=5;
  %pqr = { @(t) 0*t, @(t) 4 + 0*t, @(t) -4*t }; x0=[-2;-1]; tinic=0; tfin=10;
@@ -96,4 +97,20 @@ par = [];
  %C1 = 0;
  %C2 = 0;
 
+ %%% Disparo no lineal
+ 
+ %%% Practica 28 (Pruebas problemas disparo no lineales)
+ % 1 
+ %ffxfy = {@(t,x,y) 2*x^3 + 0*t + 0*y , @(t,x,y) 6*x^2 + 0*t + 0*y, @(t,x,y) 0*t + 0*x + 0*y }; x0=[0.5, (1/3)]; tinic=1; tfin=2;
+ %solex = @(t) (1 ./(1+t));
+ %%% Practica 29
+ ffxfy = {@(t,x,y) (2*sin(t^2) + 8*(t^2))*x - 4*(t^2)*log(x)+ 2*t*sin(t^2)*y , @(t,x,y) (2*sin(t^2) + 8*(t^2)) - 4*(t^2)/x + 0*y, @(t,x,y) 0*y + 0*x + 2*t*sin(t^2) }; x0=[exp(1), exp(2)]; tinic=0; tfin=(sqrt(10.5*pi));
+ solex = @(t) (exp(2-cos(t.^2)));
+ 
+ %%% Practica 30
+ 
+ 
+ TOL = 10e-5;
+ N = 5000;
 
+ 
